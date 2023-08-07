@@ -1,18 +1,6 @@
 /*google fonts*/
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600;700&display=swap");
-html::-webkit-scrollbar {
-  width: 0.5rem;
-  background: #020307;
-}
-
-html::-webkit-scrollbar-thumb {
-  background: #ff2c1f;
-  border-radius: 5rem;
-}
-
-*,
-*:before,
-*:after {
+@import "https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600;700&display=swap";
+* {
   font-family: "Poppins", sans-serif;
   margin: 0;
   padding: 0;
@@ -27,6 +15,15 @@ html::-webkit-scrollbar-thumb {
   --main-color: #ff2c1f;
   --text-color: #020307;
   --bg-color: #fff;
+}
+
+html::-webkit-scrollbar {
+  width: 0.5rem;
+  background: var(--text-color);
+}
+html::-webkit-scrollbar-thumb {
+  background: var(--main-color);
+  border-radius: 5rem;
 }
 
 body {
@@ -60,7 +57,6 @@ header {
   -moz-column-gap: 0.5rem;
        column-gap: 0.5rem;
 }
-
 .logo .bx {
   font-size: 24px;
   color: var(--main-color);
@@ -71,17 +67,14 @@ header {
   -moz-column-gap: 5rem;
        column-gap: 5rem;
 }
-
 .navbar li {
   position: relative;
 }
-
 .navbar a {
   font-size: 1rem;
   font-weight: 500;
   color: var(--bg-color);
 }
-
 .navbar a::after {
   content: "";
   width: 0;
@@ -92,7 +85,6 @@ header {
   left: 0;
   transition: 0.4s all linear;
 }
-
 .navbar a:hover::after {
   width: 100%;
 }
@@ -111,7 +103,6 @@ header {
   font-weight: 400;
   border-radius: 0.5rem;
 }
-
 .btn:hover {
   background: #880f0f;
 }
@@ -142,17 +133,14 @@ header {
   -o-object-fit: cover;
      object-fit: cover;
 }
-
 .box .box-img img:hover {
   transform: translateY(-10px);
   transition: 0.2s all linear;
 }
-
 .box h3 {
   font-size: 0.9rem;
   font-weight: 500;
 }
-
 .box span {
   font-size: 13px;
 }
@@ -168,13 +156,11 @@ header {
   justify-content: center;
   row-gap: 2rem;
 }
-
 .newsletter h2 {
   text-align: center;
   font-size: 1.2rem;
   font-weight: 600;
 }
-
 .newsletter form {
   background: var(--bg-color);
   padding: 10px;
@@ -182,28 +168,23 @@ header {
   display: flex;
   align-items: center;
 }
-
 .newsletter form input {
   border: none;
   outline: none;
 }
-
-.newsletter form .email {
-  width: 280px;
-}
-
 .newsletter form input::-moz-placeholder {
   color: var(--text-color);
   font-size: 0.8rem;
   font-weight: 400;
 }
-
 .newsletter form input::placeholder {
   color: var(--text-color);
   font-size: 0.8rem;
   font-weight: 400;
 }
-
+.newsletter form .email {
+  width: 280px;
+}
 .newsletter .btn {
   text-transform: uppercase;
   font-weight: 500;
@@ -227,11 +208,9 @@ header {
   -moz-column-gap: 0.5rem;
        column-gap: 0.5rem;
 }
-
 .social .bx {
   color: var(--main-color);
 }
-
 .social .bx:hover {
   background: var(--main-color);
   color: var(--bg-color);
@@ -249,7 +228,6 @@ header {
   flex: 1;
   padding-right: 20px;
 }
-
 .col-image img {
   max-width: 100%;
   height: auto;
@@ -285,7 +263,7 @@ header {
   }
   .navbar {
     position: absolute;
-    top: 100%;
+    top: -570px;
     left: 0;
     right: 0;
     display: flex;
@@ -306,6 +284,9 @@ header {
   }
   .navbar a::after {
     display: none;
+  }
+  .navbar.active {
+    top: 100%;
   }
   .home-tex h1 {
     font-size: 2.4rem;
